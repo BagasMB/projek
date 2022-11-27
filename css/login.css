@@ -1,0 +1,32 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url(../img/bgq.jpg);
+    text-transform: uppercase;
+}
+
+
+.navbar-brand{
+    font-family: 'Righteous', cursive;
+}
+
+.login {
+    border: 0;
+    height: 500px;
+    margin: auto;
+    background-color:rgba(169, 169, 169, 0.281);
+    border-radius: 40px;
+}
+
+.login h4{
+    margin-top: 100px;
+}
+
+form .form-group input{
+    margin: auto;
+}
+
+form .user input{
+    margin: auto;
+    margin-top: 70px;
+}
+/* style="background-image: url('img/bg/memphis-colorful.png'); "*/
