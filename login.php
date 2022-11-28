@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['login'])) {
     header('location:index.php');
     exit;
-}
+} 
 
 // Memanggil atau membutuhkan file function.php
 require 'cont.php';

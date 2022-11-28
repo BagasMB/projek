@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg mb-5" style="background-color: deepskyblue;">
+    <nav class="navbar navbar-expand-lg mb-5 text-uppercase" style="background-color: deepskyblue;">
         <div class="container">
             <a class="navbar-brand link-light fw-bold" href="#">Data Class</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,7 +91,21 @@ if (isset($_POST['submit'])) {
                     </div>
                     <div class="col-12 mb-3">
                         <label class="form-label">Kelas :</label>
-                        <input type="text" class="form-control" name="kelas" id="kelas" placeholder="Kelas" autocomplete="off" required>
+                        <select name="kelas" id="kelas" class="form-select" required>
+                            <option>Pilih Kelas</option>
+                            <option value="X Tekstil A">X Tekstil A</option>
+                            <option value="X Tekstil B">X Tekstil B</option>
+                            <option value="X Tekstil C">X Tekstil C</option>
+                            <option value="X Mesin A">X Mesin A</option>
+                            <option value="X Mesin B">X Mesin B</option>
+                            <option value="X Mesin C">X Mesin C</option>
+                            <option value="X Ototronik A">X Ototronik A</option>
+                            <option value="X Ototronik B">X Ototronik B</option>
+                            <option value="X Ototronik C">X Ototronik C</option>
+                            <option value="X RPL A">X RPL A</option>
+                            <option value="X RPL B">X RPL B</option>
+                            <option value="X RPL C">X RPL C</option>
+                        </select>
                     </div>
                     <div class="col-12 mb-3">
                         <label class="form-label">Alamat :</label>

@@ -39,7 +39,7 @@ if (!isset($_SESSION['login'])) {
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg mb-5" style="background-color: deepskyblue;">
+    <nav class="navbar navbar-expand-lg mb-5 text-uppercase" style="background-color: deepskyblue;">
         <div class="container">
             <a class="navbar-brand link-light fw-bold" href="#">Data Class</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
