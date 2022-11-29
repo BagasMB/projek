@@ -65,23 +65,23 @@ if (isset($_POST['login'])) {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.php">Data Class</a>
+            <a class="navbar-brand" href="index.php">Data | Class</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.php">Home</a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
-                    </li> -->
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="daftar.php">Daftar</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </nav>
     <!-- Close Navbar -->
@@ -98,7 +98,7 @@ if (isset($_POST['login'])) {
                     <div class="form-group user">
                         <input type="text" class="form-control w-50" placeholder="Masukkan Username" name="username" autocomplete="off" required>
                     </div>
-                    <div class="form-group my-5">
+                    <div class="form-group my-4 ">
                         <input type="password" class="form-control w-50" placeholder="Masukkan Password" name="password" autocomplete="off" required>
                     </div>
                     <button class="btn btn-primary text-uppercase" type="submit" name="login">Login</button>

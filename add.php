@@ -60,8 +60,8 @@ if (isset($_POST['submit'])) {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link link-light fw-bold" aria-current="page" href="index.php"><i class="bi bi-house-door-fill"></i> Home</a>
-                    <a class="nav-link link-light fw-bold" href="#"><i class="bi bi-plus-lg"></i> Add New</a>
+                    <!-- <a class="nav-link link-light fw-bold" aria-current="page" href="index.php"><i class="bi bi-house-door-fill"></i> Home</a> -->
+                    <!-- <a class="nav-link link-light fw-bold" href="#"><i class="bi bi-plus-lg"></i> Add New</a> -->
                     <a class="nav-link link-light fw-bold" href="index.php">Back <i class="bi bi-box-arrow-right"></i></a>
                 </div>
             </div>
@@ -122,7 +122,7 @@ if (isset($_POST['submit'])) {
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary mt-3" name="submit"><i class="bi bi-download"></i> Save</button>
-                <a href="index.php" class="btn btn-danger mt-3"><i class="bi bi-x-lg"></i> Cancel</a>
+                <a href="add.php" class="btn btn-danger mt-3"><i class="bi bi-arrow-clockwise"></i> Reset</a>
             </form>
         </div>
     </div>

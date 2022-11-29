@@ -39,18 +39,18 @@ if (!isset($_SESSION['login'])) {
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg mb-5 text-uppercase" style="background-color: deepskyblue;">
+    <nav class="navbar navbar-expand-lg navbar-dark text-uppercase" style="background-color: deepskyblue;">
         <div class="container">
-            <a class="navbar-brand link-light fw-bold" href="#">Data Class</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fw-bold" href="index.php">Data | Class</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto">
-                    <a class="nav-link link-light fw-bold" aria-current="page" href="index.php"><i class="bi bi-house-door-fill"></i> Home</a>
-                    <a class="nav-link link-light fw-bold" href="add.php"><i class="bi bi-plus-lg"></i> Add New</a>
-                    <a class="nav-link link-danger fw-bold" href="logout.php">log aut <i class="bi bi-box-arrow-right"></i></a>
-                </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link link-danger fw-bold" href="logout.php">log out <i class="bi bi-box-arrow-right"></i></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -68,8 +68,19 @@ if (!isset($_SESSION['login'])) {
         <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
         <a href="add.php" class="btn btn-dark mb-4"><i class="bi bi-plus-lg"></i> Add New</a>
 
-        <table class="table table-hover text-center table-bordered table-striped" border="1">
-            <thead class="table-primary">
+        <!-- Pencarian -->
+        <form action="index.php" method="GET" class="mb-2" style="text-align: end;" autocomplete="off">
+            <label class="form-label">Search : </label>
+            <input type="text" name="cari" id="cari" placeholder="Search" value="<?php if (isset($_GET['cari'])) {
+                                                                                        echo $_GET['cari'];
+                                                                                    } ?>">
+            <button type="submit"><i class="bi bi-search"></i></button>
+            <a href="index.php" class="btn btn-danger mb-1"><i class="bi bi-arrow-clockwise"></i> Reset</a>
+        </form>
+
+        <!-- Table -->
+        <table class="table table-hover text-center table-bordered border-dark table-striped" border="1">
+            <thead class="table-primary table-bordered border-dark ">
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Nis</th>
@@ -84,8 +95,15 @@ if (!isset($_SESSION['login'])) {
             <tbody>
                 <?php
                 include("cont.php");
+                // tombol percarian
+                if (isset($_GET['cari'])) {
+                    $pencarian = $_GET['cari'];
+                    $query = "SELECT * FROM siswa WHERE nis like '%" . $pencarian . "%' or name like '%" . $pencarian . "%' or kelas like '%" . $pencarian . "%' or gender like '%" . $pencarian . "%'";
+                } else {
+                    $query = "SELECT * FROM siswa";
+                }
                 $no = 1;
-                $ambildata = mysqli_query($conn, "SELECT * FROM siswa");
+                $ambildata = mysqli_query($conn, $query);
                 while ($tampil = mysqli_fetch_array($ambildata)) {
                     echo "
                     <tr>
@@ -124,11 +142,12 @@ if (!isset($_SESSION['login'])) {
     </div>
 
 
-
-    <!-- Js Boostrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <footer>
+        <!-- Js Boostrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    </footer>
 </body>
 
 </html>

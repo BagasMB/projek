@@ -60,17 +60,17 @@ if (isset($_POST['submit'])) {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg mb-5 text-uppercase" style="background-color: deepskyblue;">
         <div class="container">
-            <a class="navbar-brand link-light" href="#">Data Class</a>
+            <a class="navbar-brand link-light fw-bold" href="#">Data | Class</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link link-light fw-bold" aria-current="page" href="index.php"><i class="bi bi-house-door-fill"></i> Home</a>
                     <a class="nav-link link-light fw-bold" href="add.php"><i class="bi bi-plus-lg"></i> Add New</a>
                     <a class="nav-link link-light fw-bold" href="index.php">Back <i class="bi bi-box-arrow-right"></i></a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </nav>
 

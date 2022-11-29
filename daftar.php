@@ -3,9 +3,10 @@ include("cont.php");
 
 if (isset($_POST['daftar'])) {
     $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
  
-    $query_sql = "INSERT INTO `daftar`(`username`, `password`) VALUES ('$username', '$password')";
+    $query_sql = "INSERT INTO `daftar`(`username`, `email`, `password`) VALUES ('$username', '$email', '$password')";
 
     if (mysqli_query($conn, $query_sql)) {
         header("Location: login.php");
@@ -48,23 +49,23 @@ if (isset($_POST['daftar'])) {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.php">Data Class</a>
+            <a class="navbar-brand" href="index.php">Data | Class</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">Home</a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
-                    </li> -->
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.php">Login</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </nav>
     <!-- Close Navbar -->
@@ -74,10 +75,13 @@ if (isset($_POST['daftar'])) {
             <div class="col-md-6 text-center login" >
                 <h4 class="fw-bold link-light">Daftar | Admin</h4>
                 <form action="" method="post">
-                    <div class="form-group user">
-                        <input type="text" class="form-control w-50" placeholder="Masukkan Username" name="username" autocomplete="off" required>
+                    <div class="form-group user mb-3">
+                        <input type="text" class="form-control w-50" placeholder="Masukan Username" name="username" autocomplete="off" required>
                     </div>
-                    <div class="form-group my-5">
+                    <div class="form-group mb-3">
+                        <input type="email" class="form-control w-50" placeholder="example : ytta@gmail.com" name="email" autocomplete="off" required>
+                    </div>
+                    <div class="form-group mb-3">
                         <input type="password" class="form-control w-50" placeholder="Masukkan Password" name="password" autocomplete="off" required>
                     </div>
                     <button class="btn btn-primary text-uppercase" type="submit" name="daftar">Daftar</button>

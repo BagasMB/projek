@@ -5,5 +5,5 @@ session_unset();
 session_destroy();
 // Session dihapus dan logout
 
-header('location: index.php');
-    // kembali ke index.php
+header('location: login.php');
+    // kembali ke login.php
