@@ -97,7 +97,8 @@ if (!isset($_SESSION['login'])) {
                 include("cont.php");
                 // tombol percarian
                 if (isset($_GET['cari'])) {
-                    $pencarian = $_GET['cari'];
+                    global $conn;
+                    $pencarian = mysqli_real_escape_string($conn, $_GET['cari']);
                     $query = "SELECT * FROM siswa WHERE nis like '%" . $pencarian . "%' or name like '%" . $pencarian . "%' or kelas like '%" . $pencarian . "%' or gender like '%" . $pencarian . "%'";
                 } else {
                     $query = "SELECT * FROM siswa";

@@ -4,12 +4,13 @@ include("cont.php");
 require 'cont.php';
 
 if (isset($_POST['submit'])) {
-    $nis = $_POST['nis'];
-    $absen = $_POST['absen'];
-    $name = $_POST['name'];
+    global $conn;
+    $nis = mysqli_real_escape_string ($conn, $_POST['nis']);
+    $absen = mysqli_real_escape_string ($conn, $_POST['absen']);
+    $name = mysqli_real_escape_string ($conn, $_POST['name']);
     $kelas = $_POST['kelas'];
     $gender = $_POST['gender'];
-    $alamat = $_POST['alamat'];
+    $alamat = mysqli_real_escape_string ($conn, $_POST['alamat']);
 
     $sql = "INSERT INTO `siswa`(`nis`, `absen`, `name`, `kelas`, `gender`, `alamat`) VALUES ('$nis', '$absen', '$name', '$kelas', '$gender', '$alamat')";
 

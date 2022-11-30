@@ -9,12 +9,14 @@ $data = mysqli_fetch_array($queryget);
 
 
 if (isset($_POST['submit'])) {
-    $nis = $_POST['nis'];
-    $absen = $_POST['absen'];
-    $name = $_POST['name'];
+    global $conn;
+    $nis = mysqli_real_escape_string($conn, $_POST['nis']);
+    $absen = mysqli_real_escape_string($conn, $_POST['absen']);
+    $name = mysqli_real_escape_string ($conn, $_POST['name']);
     $kelas = $_POST['kelas'];
     $gender = $_POST['gender'];
-    $alamat = $_POST['alamat'];
+    $alamat = mysqli_real_escape_string ($conn, $_POST['alamat']);
+
 
     $sql = "UPDATE `siswa` SET `nis`='$nis',`absen`='$absen',`name`='$name',`kelas`='$kelas',`gender`='$gender',`alamat`='$alamat' WHERE nis=$nis";
 
